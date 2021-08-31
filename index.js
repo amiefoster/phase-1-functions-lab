@@ -19,8 +19,9 @@ function distanceFromHqInFeet(location){
 
 //distance traveeld in feet
 
-// let startingPoint
-// let endingPoint
+
+let startingPoint
+let endingPoint
 
 function distanceTravelledInFeet(startingPoint, endingPoint){
     return (Math.abs(startingPoint - endingPoint) * 264)
@@ -29,13 +30,21 @@ function distanceTravelledInFeet(startingPoint, endingPoint){
 //fare price
 
 function calculatesFarePrice(startingPoint, endingPoint){
-    if (distanceTravelledInFeet => 400 && distanceTravelledInFeet <= 2000) {
-        return price = 2 * distanceTravelledInFeet
+      let feetTravelled = distanceTravelledInFeet(startingPoint, endingPoint);
+
+    if (feetTravelled <= 400) {
+        return 0
     }
-    else if (distanceTravelledInFeet => 2001 && distanceTravelledInFeet <= 2500) {
+    
+    else if (feetTravelled > 400 && feetTravelled <= 2000) {
+        return (feetTravelled - 400) * 0.02
+    }
+
+    else if (feetTravelled => 2001 && feetTravelled <= 2500) {
         return 25
     }
-    else (distanceTravelledInFeet => 2501) {
-        return 'cannot travel that far'
-    } ;
-}
+    
+    else {
+         return 'cannot travel that far'
+        } 
+    }
